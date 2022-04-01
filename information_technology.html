@@ -117,7 +117,7 @@
 								<div class="title">Курсы <br><span>Информационные технологии</span></div>
 							</div>
 
-							<div class="search">								
+							<div class="search">							
 								<form action="">
 									<input type="search" name="" value="" placeholder="Поиск" class="input">
 
@@ -144,10 +144,27 @@
 						<div class="cont row">
 							<aside>		
 								<form action="" class="filter">
-									<div class="filter_title">Фильтр
-										<button class="close"></button>
+									<div class="filter_title">
+										<button class="close"><img src="images/src/ic_arrow.png" alt=""></button>Фильтры
 									</div>
-									<div class="cats">
+									<div class="search-result">
+										<div class="search-result_item">
+											<span>Колледж</span> 
+											<button>
+												<img src="images/delete.png" alt="">
+											</button>										
+										</div>
+										<div class="search-result_item">
+											<span>Очная</span> 
+											<button>
+												<img src="images/delete.png" alt="">
+											</button>										
+										</div>
+										<button class="reset">
+											Сбросить все
+										</button>
+									</div>	
+									<div class="cats fc">
 										<div class="cats_title">Категории</div>	
 										<div class="tab_filter">																															
 											<div class="data2">
@@ -238,7 +255,12 @@
 											<label for="">Коммерция</label>
 											<input type="checkbox">
 										</div>	
-									</div>		
+									</div>
+									
+									<div class="submit-mob">
+										<button type="submit" class="submit_btn">Применить</button>
+										<button type="reset" class="reset">Сбросить</button> 
+									</div>
 								</form>				
 							</aside>
 
@@ -264,24 +286,19 @@
 								</div>	
 								<div class="list_head">
 									<div class="sort">
-										<div class="name">Сортировать по:</div>
 										<div class="field">
 											<select name="order" style="display: none;">
-												<option value="1" selected="">Возрастанию цены</option>
-												<option value="2">Убыванию цены</option>
-												<option value="3">Количеству отзывов</option>
-												<option value="4">Рейтингу</option>
+												<option value="1" selected="">Сначала дороже</option>
+												<option value="2">Сначала дешевле</option>
+												<option value="3">По количеству отзывов</option>
+												<option value="4">По рейтингу</option>
 											</select>
-					
-											<svg class="icon"><use xlink:href="https://chelyuskin.com/wp-content/themes/raten/images/sprite.svg#ic_arrow"></use></svg>
 										</div>
 									</div>						
 									<button class="mob_filter_link">
-										<img src="images/src/ic_filter.svg" alt=""> Фильтр
+										 Фильтр<img src="images/src/ic_filter.png" alt="">
 									</button>															
 								</div>
-									
-								
 								<div class="cards_items">
 									<div class="cards_item">
 										<div class="cards_item-name">

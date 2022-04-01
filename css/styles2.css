@@ -148,6 +148,7 @@ input[type="search"]::-webkit-search-results-decoration {
     font-weight: 700;
     color: var(--text_color);
     margin-bottom: 19px;
+    position: relative;
 }
 .content_flex {
     padding-top: 59px;
@@ -158,6 +159,13 @@ input[type="search"]::-webkit-search-results-decoration {
     padding-bottom: 14px;
     border-bottom: 1px solid #e8ebf2;
 }
+.content_flex .cats.fc {
+    margin-top: 0;
+}
+.content_flex .cats .hide{
+    display: none;
+}
+
 .content_flex .cats:nth-child(2) {
     margin-top: 0;
 }
@@ -260,11 +268,12 @@ aside .cats input:checked + label:after {
 .search-result {
     display: flex;
     align-items: center;  
-    margin-bottom: 33px;  
+    margin-bottom: 0px;  
+    flex-wrap: wrap;
 }
 .search-result_item {
     margin-right: 13px;
-    padding: 6px 14px 6px 17px;
+    padding: 6px 6px 6px 17px;
     font-size: 16px;
     font-weight: 400;
     color: #3346b0;
@@ -273,6 +282,9 @@ aside .cats input:checked + label:after {
     position: relative;
     display: flex;
     align-items: center;
+}
+.search-result button {
+    margin-left: 9px;
 }
 .search-result .reset {
     min-width: 110px;
@@ -284,10 +296,17 @@ aside .cats input:checked + label:after {
 }
 .list_head {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.cards .sort {
+    display: none;
 }
 
 .search-result_item img {
-    margin-left: 9px;
+    
+    display: block;
 }
 .cards {
     width: calc(100% - 195px);
@@ -297,10 +316,9 @@ aside .cats input:checked + label:after {
     line-height: 29px;
     font-weight: 700;
     color: var(--text_color);
-    margin-bottom: 25px;
+    margin-bottom: 23px;
 }
 .cards_item {
-    position: relative;
     display: flex;
     border: 1px solid #dbdbdb;
     border-radius: 2px;
@@ -610,17 +628,14 @@ aside {
 
 
 .mob_filter_link {
-    color: #fff;
+    color: #1e2d4b;
     font-family: var(--font_family);
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 400;
     line-height: 15px;
     display: none;
-    width: 167px;
-    height: 52px;
     cursor: pointer;
     border: none;
-    background: #ff3c46;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -630,18 +645,19 @@ aside {
 }
 .mob_filter_link img {
     display: block;
-    margin-right: 10px;
-    width: 16px;
-    height: 17px;
+    margin-left: 14px;
+    width: 20px;
+    height: 18px;
 }
 .filter_title {
     display: none;
 }
-.cards .sort {
+.submit-mob {
     display: none;
 }
-
-
+aside .search-result {
+    display: none;
+}
 
 
 
@@ -673,18 +689,15 @@ aside {
     aside .filter {
         position: fixed;
         z-index: 151;
-        top: 0px;
+        top: 60px;
         left: 0;
         display: none;
         overflow: auto;
         width: 100%;
         height: 100vh;
-        padding: 30px;
+        padding: 15px;
         pointer-events: auto;
         background: #fff;
-    }
-    aside .filter {
-        padding-top: 90px;
     }
     aside .filter > * {
         pointer-events: auto;
@@ -699,9 +712,7 @@ aside {
         color: var(--main_color4);
         position: relative;
         display: flex;
-        padding-bottom: 20px;
-        border-bottom: 1px solid rgba(151, 151, 151, .21);
-        justify-content: space-between;
+        padding-bottom: 20px;        
         align-items: center;
         align-content: center;
         flex-wrap: wrap;
@@ -710,15 +721,8 @@ aside {
         font-size: 22px;
         line-height: 21px; 
     }
-    aside .filter_title .close {
-        display: block;
-        width: 24px;
-        height: 24px;
-        margin-left: auto;
-        cursor: pointer;
-        border: none;
-        border-radius: 4px;
-        background: #c8c8c8 url(../images/ic_close.svg) 50% no-repeat;
+    aside .filter_title img {
+        margin-right: 8px;
     }
     .cards {
         width: 100%;
@@ -737,6 +741,111 @@ aside {
     .cards .sort {
         display: block !important;
     }
+    .nice-select {
+        border: none;
+        font-size: 18px;
+        padding-right: 25px;
+    }
+    .nice-select:after {
+        height: 11px;
+        margin-top: -7px;
+        right: -13px;
+        width: 11px;
+    }
+    .cards_text {
+        text-align: center;
+    }
+    .cards .search-result {
+        display: none;
+    }
+    aside .search-result {
+        display: flex;
+        padding-bottom: 27px;
+        border-bottom: 1px solid rgba(151, 151, 151, .21);
+    }
+    .search-result {
+        margin-bottom: 26px;
+    }
+    .cats_title:after {
+        border-bottom: 2px solid #505050;
+        border-left: 2px solid #505050;
+        content: '';
+        display: block;
+        height: 8px;
+        margin-top: -8px;
+        pointer-events: none;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        -webkit-transform-origin: 66% 66%;
+        -ms-transform-origin: 66% 66%;
+        transform-origin: 66% 66%;
+        -webkit-transform: rotate(225deg);
+        -ms-transform: rotate(225deg);
+        transform: rotate(225deg);
+        -webkit-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+        width: 8px;
+    }
+    .cats_title.active:after {
+        -webkit-transform: rotate(315deg);
+        -ms-transform: rotate(315deg);
+        transform: rotate(315deg);
+    }
+    .submit-mob {
+        display: block;
+        margin-bottom: 60px;
+        border-top: 1px solid #e8ebf2;
+        padding-top: 12px;
+    }
+    .submit-mob .submit_btn {
+        width: 139px;
+        height: 40px;
+        box-shadow: 0px 2px 8px 0px rgba(255,60,70,0.28);
+        border-radius: 1px;
+        font-family: "Gilroy";
+        font-size: 16px;
+        line-height: 15px;
+        font-weight: 700;
+        color: #ffffff;
+        background: #ff3c46;
+        margin-right: 12px;
+    }
+    .submit-mob .reset {
+        width: 139px;
+        height: 40px;
+        border: 1px solid #ff3c46;
+        border-radius: 1px;
+        font-family: "Gilroy";
+        font-size: 16px;
+        line-height: 15px;
+        font-weight: 700;
+        color: #ff3c46;        
+    }
+    .switch_block {
+        border-bottom: 1px solid #e8ebf2;
+        padding-bottom: 12px; 
+    }
+    aside .search-result {
+        margin-bottom: 26px;
+    }
+    .content_flex .cats {
+        padding-bottom: 0;
+    }
+    aside .cats label {
+        margin-bottom: 20px;
+    }
+    aside .cats label:before {
+        top: -2px;
+    }
+    aside .cats label:after {
+        top: 3px;
+    }
+    .nice-select .option {
+        line-height: 27px;
+        min-height: 27px;
+    }
+ 
 
 }
 
@@ -746,8 +855,8 @@ aside {
         display: none;
     }
     .course_search .data .title {
-        margin-bottom: 20px;
-        padding-top: 120px;
+        margin-bottom: 42px;
+        padding-top: 140px;
         font-size: 35px;
         line-height: 47px;
         max-width: 100%;
@@ -763,18 +872,20 @@ aside {
     .cards_item-info-title {
         font-size: 24px;
         line-height: 28px;
+        width: calc(100% - 130px);
     }
     .cards_item-info {
         padding: 15px;
     }
     .cards_item-price {
-        padding: 15px;
+        padding: 0 15px 15px 15px;
     }
     .cards_item-name {
         padding: 15px;
     }
     .cards_item {
         flex-direction: column;
+        position: relative;
     }
     .cards_item-name {
         max-width: 100%;
@@ -790,7 +901,6 @@ aside {
     }
     .cards_item-price-wrap {
         margin-right: 30px;
-        display: flex;
     }
     .cards_item-price {
         max-width: 100%;        
@@ -798,7 +908,6 @@ aside {
     .cards_item-price-box {
         border-top: 1px dashed #dbdbdb;
         padding-top: 20px;
-        flex-direction: column;
     }
     .course_search .search {
         padding: 15px;
@@ -828,11 +937,6 @@ aside {
     .course_search .search {
         flex-direction: column-reverse;
     }
-    .mob_filter_link {
-        margin-right: 0;
-        margin-top: 20px;
-        width: 100%;
-    }
 
     .cards_item-name {
         position: absolute;
@@ -850,13 +954,6 @@ aside {
         width: 100%;
         text-align: end;
     }
-    .cards_item-sale {
-        flex-wrap: wrap;
-    }
-    .search-result {
-        display: none;
-    }
-
 
 
 }
@@ -902,14 +999,16 @@ aside {
     .definition ul li {
         font-size: 15px;
         line-height: 22px;
-        margin-bottom: 10px;
+        margin-bottom: 10px;        
     }
     .cards_item-price-wrap {
         margin-right: 15px;
+        display: flex;
+        justify-content: space-between;
     }
     .course_search .data .title {
-        font-size: 30px;
-        line-height: 37px;
+        font-size: 24px;
+        line-height: 26px;
     }
     .search-result {
         flex-wrap: wrap;
@@ -918,23 +1017,23 @@ aside {
         margin-bottom: 17px;
     }
     .cards_text {
-        font-size: 20px;
-        line-height: 26px;
-        margin-bottom: 17px;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 16px;
     }
     .content_flex {
         padding-top: 20px;
         padding-bottom: 22px;
     }
     .course_search .search {
-        padding: 8px;
+        padding: 8px 7px;
     }
     .search-result {
         margin-bottom: 20px;
     }
     .cards_item-info-category {
-        font-size: var(--font_size);
-        line-height: 25px;
+        font-size: 14px;
+        line-height: 16px;
         padding-bottom: 17px;
     }
     .cards_item-name-title {
@@ -943,10 +1042,80 @@ aside {
         font-size: 15px;
     }
     .cards_item-name-logo {
-        width: 101px;
-        height: 101px;
-        margin: 0 0 auto 0;
+        width: 42px;
+        height: 42px;
     }
+    .cards_item-info-title {
+        font-size: 16px;
+        line-height: 20px;
+        width: calc(100% - 55px);
+    }
+    .cards_item-price-box {
+        flex-direction: column;
+    }
+    .cards_item-tarif {
+        margin-left: 0;
+    }
+    .cards_item-sale {
+        flex-wrap: wrap;
+        width: 100%;
+        display: flex;
+        justify-content: right;
+    }
+    .course_search .search input {
+        height: 32px;
+    }
+    .course_search .search form {
+        height: 32px;
+    }
+    .course_search .search .icon_loupe {
+        width: 12px;
+        height: 12px;
+        left: 11px;
+    }
+    .course_search .search input {
+        padding: 0 25px 0 31px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+    input[type=search]::placeholder {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .nice-select {
+        font-size: 14px;
+        padding-right: 20px;
+    }
+    .nice-select:after {
+        height: 8px;
+        margin-top: -5px;
+        right: -10px;
+        width: 8px;
+    }
+    .mob_filter_link {
+        font-size: 14px;
+    }
+    .cards_item-info-time .icon,
+    .cards_item-info-adress .icon {
+        width: 15px;
+        height: 19px;
+    }
+    .cards_item-info-time, 
+    .cards_item-info-adress {
+        font-size: 14px;
+        line-height: 21px;
+    }
+    .cards_item-price .bg {
+        width: 75px;
+        height: 75px;
+    }
+    .link-more {
+        font-size: 16px;
+    }
+    .cards_item-info-category::before {
+        top: 3px;
+    }
+ 
  
 
 
