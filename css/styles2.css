@@ -637,6 +637,12 @@ aside {
 .filter_title {
     display: none;
 }
+.cards .sort {
+    display: none;
+}
+
+
+
 
 
 @media print, (max-width: 1187px) {
@@ -727,6 +733,9 @@ aside {
         font-size: 43px;
         line-height: 54px;
         max-width: 400px;
+    }
+    .cards .sort {
+        display: block !important;
     }
 
 }
@@ -847,6 +856,8 @@ aside {
     .search-result {
         display: none;
     }
+
+
 
 }
 

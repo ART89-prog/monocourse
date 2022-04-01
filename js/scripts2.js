@@ -23,20 +23,22 @@ $(() => {
 	$('select').niceSelect();
 
 
-	$('.tab_filter_title span, .tab_filter_title i').click(function(e){
+	$('.cats_title').click(function(e){
 		e.preventDefault()	
-		if($(this).parent().hasClass("active"))
+		if($(this).hasClass("active"))
 		{
-			$(this).parent().removeClass("active");
-			$(this).parent().next().slideUp();
+			$(this).removeClass("active");
+			$(this).next().slideUp();
 		}	
 		else
 		{
-			$(this).parent().addClass("active");
-			$(this).parent().next().slideDown();
+			$(this).addClass("active");
+			$(this).next().slideDown();
 		}
 
 	})
+
+
 
 
 })
