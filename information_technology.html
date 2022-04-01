@@ -24,6 +24,7 @@
 		<!-- Подключение файлов стилей -->
 		<link rel="stylesheet" href="css/swiper-bundle.min.css" async>
 		<link rel="stylesheet" href="css/swiper.css" async>
+		<link rel="stylesheet" href="css/nice-select.css" async>
 		<link rel="stylesheet" href="css/styles.css" async>
 		<link rel="stylesheet" href="css/styles2.css" async>
 
@@ -116,10 +117,7 @@
 								<div class="title">Курсы <br><span>Информационные технологии</span></div>
 							</div>
 
-							<div class="search">
-								<button class="mob_filter_link">
-									<img src="images/src/ic_filter.svg" alt=""> Фильтр
-								</button>
+							<div class="search">								
 								<form action="">
 									<input type="search" name="" value="" placeholder="Поиск" class="input">
 
@@ -265,7 +263,27 @@
 									<button class="reset">
 										Сбросить все
 									</button>
+								</div>	
+								<div class="list_head">
+									<div class="sort">
+										<div class="name">Сортировать по:</div>
+										<div class="field">
+											<select name="order" style="display: none;">
+												<option value="1" selected="">Возрастанию цены</option>
+												<option value="2">Убыванию цены</option>
+												<option value="3">Количеству отзывов</option>
+												<option value="4">Рейтингу</option>
+											</select>
+					
+											<svg class="icon"><use xlink:href="https://chelyuskin.com/wp-content/themes/raten/images/sprite.svg#ic_arrow"></use></svg>
+										</div>
+									</div>						
+									<button class="mob_filter_link">
+										<img src="images/src/ic_filter.svg" alt=""> Фильтр
+									</button>															
 								</div>
+									
+								
 								<div class="cards_items">
 									<div class="cards_item">
 										<div class="cards_item-name">

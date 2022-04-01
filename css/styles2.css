@@ -274,10 +274,6 @@ aside .cats input:checked + label:after {
     display: flex;
     align-items: center;
 }
-.search-result button {
-    width: 19px;
-    height: 19px;
-}
 .search-result .reset {
     min-width: 110px;
     font-family: var(--font_family);
@@ -285,6 +281,9 @@ aside .cats input:checked + label:after {
     font-weight: 400;
     color: #455fed;
     display: block;
+}
+.list_head {
+    display: flex;
 }
 
 .search-result_item img {
@@ -301,6 +300,7 @@ aside .cats input:checked + label:after {
     margin-bottom: 25px;
 }
 .cards_item {
+    position: relative;
     display: flex;
     border: 1px solid #dbdbdb;
     border-radius: 2px;
@@ -454,6 +454,7 @@ aside .cats input:checked + label:after {
     height: 14px;
     fill: #455fed;
     margin-right: 5px;
+    flex-shrink: 0;
 }
 .cards_item-sale-value {
     font-size: 20px;
@@ -608,7 +609,7 @@ aside {
 }
 
 
-.course_search .mob_filter_link {
+.mob_filter_link {
     color: #fff;
     font-family: var(--font_family);
     font-size: 13px;
@@ -627,7 +628,7 @@ aside {
     display: none;
     margin-right: 20px;
 }
-.course_search .mob_filter_link img {
+.mob_filter_link img {
     display: block;
     margin-right: 10px;
     width: 16px;
@@ -660,7 +661,7 @@ aside {
 
 
 @media print, (max-width: 1023px) {
-    .course_search .mob_filter_link {
+    .mob_filter_link {
         display: flex;
     }
     aside .filter {
@@ -780,6 +781,7 @@ aside {
     }
     .cards_item-price-wrap {
         margin-right: 30px;
+        display: flex;
     }
     .cards_item-price {
         max-width: 100%;        
@@ -787,6 +789,7 @@ aside {
     .cards_item-price-box {
         border-top: 1px dashed #dbdbdb;
         padding-top: 20px;
+        flex-direction: column;
     }
     .course_search .search {
         padding: 15px;
@@ -816,10 +819,33 @@ aside {
     .course_search .search {
         flex-direction: column-reverse;
     }
-    .course_search .mob_filter_link {
+    .mob_filter_link {
         margin-right: 0;
         margin-top: 20px;
         width: 100%;
+    }
+
+    .cards_item-name {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: none;
+    }
+    .cards_item-name-title {
+        display: none;
+    }
+    .cards_item-name-logo {
+        margin: 0 0 0 auto;
+    }
+    .cards_item-sale s {
+        width: 100%;
+        text-align: end;
+    }
+    .cards_item-sale {
+        flex-wrap: wrap;
+    }
+    .search-result {
+        display: none;
     }
 
 }

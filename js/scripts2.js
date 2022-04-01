@@ -1,7 +1,7 @@
 $(() => {
 
 	// Фильтр
-	$('body').on('click', '.course_search .mob_filter_link', function(e) {
+	$('body').on('click', '.mob_filter_link', function(e) {
     	e.preventDefault()
 
     	if( $(this).hasClass('active') ) {
@@ -17,6 +17,25 @@ $(() => {
 		e.preventDefault()
 	    $('aside .mob_filter_link').removeClass('active')
 		$('aside .filter').fadeOut(200)
+	})
+
+
+	$('select').niceSelect();
+
+
+	$('.tab_filter_title span, .tab_filter_title i').click(function(e){
+		e.preventDefault()	
+		if($(this).parent().hasClass("active"))
+		{
+			$(this).parent().removeClass("active");
+			$(this).parent().next().slideUp();
+		}	
+		else
+		{
+			$(this).parent().addClass("active");
+			$(this).parent().next().slideDown();
+		}
+
 	})
 
 
